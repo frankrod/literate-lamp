@@ -1,0 +1,51 @@
+<!-- <div class="row"> -->
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <td>
+          Name
+        </td>
+        <td>
+          Category
+        </td>
+        <td>
+          Hours
+        </td>
+        <td>
+          Price
+        </td>
+        <td>
+          Address
+        </td>
+        <td>
+          Tips
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in vm.items">
+        <td>
+          {{item.venue.name}}
+        </td>
+        <td>
+          {{item.venue.categories[0].name}}
+        </td>
+        <td>
+          <venue-hours venue-id="{{item.venue.id}}"></venue-hours>
+        </td>
+        <td>
+          {{item.venue.price.message}}
+        </td>
+        <td>
+          {{item.venue.location.formattedAddress}}
+        </td>
+        <td>
+          {{item.tips[0].text}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" name="next" class="btn btn-primary" ng-click="vm.back()">Back</button>
+
+  <button type="button" name="next" class="btn btn-primary" ng-click="vm.next()">Next</button>
+<!-- </div> -->
