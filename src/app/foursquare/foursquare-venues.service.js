@@ -22,5 +22,9 @@
       return httpqService.get('venue/'+venueId);
     }
 
+    function downloadExcel() {
+      return httpqService.get('excel')
+    }
+
   }
 })();

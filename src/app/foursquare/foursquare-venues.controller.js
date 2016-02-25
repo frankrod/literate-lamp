@@ -12,6 +12,7 @@
     var offset = 0;
     vm.next = next;
     vm.back = back;
+    vm.downloadExcelFile = downloadExcelFile();
     getVenues(offset);
 
     function getVenues(offset) {
@@ -36,6 +37,10 @@
         offset = 0;
       }
       return getVenues(offset);
+    }
+
+    function downloadExcelFile() {
+      return FoursquareVenuesService.downloadExcel();
     }
   }
 })();
