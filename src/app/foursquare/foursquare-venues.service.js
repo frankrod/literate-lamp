@@ -9,7 +9,8 @@
   function FoursquareVenuesService(httpqService) {
     var service = {
       getAllVenues: getAllVenues,
-      getVenue: getVenue
+      getVenue: getVenue,
+      downloadExcel: downloadExcel
     }
 
     return service;
