@@ -6,13 +6,13 @@
     .controller('FoursquareVenuesController', FoursquareVenuesController);
 
   /** @ngInject */
-  function FoursquareVenuesController(FoursquareVenuesService, $log) {
+  function FoursquareVenuesController(FoursquareVenuesService, $log, serverUrl) {
     var vm = this;
     var limit = 50;
     var offset = 0;
     vm.next = next;
     vm.back = back;
-    vm.downloadExcelFile = downloadExcelFile();
+    vm.url = serverUrl + 'excel'
     getVenues(offset);
 
     function getVenues(offset) {
@@ -37,10 +37,6 @@
         offset = 0;
       }
       return getVenues(offset);
-    }
-
-    function downloadExcelFile() {
-      return FoursquareVenuesService.downloadExcel();
     }
   }
 })();

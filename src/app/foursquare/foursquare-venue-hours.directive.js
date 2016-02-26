@@ -29,7 +29,7 @@
       FoursquareVenuesService.getVenue(vm.venueId)
         .then(function(data) {
           $log.info(data);
-          if (typeof data.response.venue.hours.timeframes != "undefined") {
+          if (typeof data.response.venue.hours != "undefined") {
             var timeframes = data.response.venue.hours.timeframes
             angular.forEach(timeframes, function(timeframe){
               var daysOpen = timeframe.days;
